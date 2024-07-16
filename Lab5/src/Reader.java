@@ -2,7 +2,7 @@ public class Reader {
     private String name = "New user";
     private int capacity;
     private String[] books; // Array to hold book titles
-    private int bookCount; // Current number of books added
+    private int bookCount;
 
     // Method to create a new reader with a name and initial capacity
     public void createReader(String x, int y) {
