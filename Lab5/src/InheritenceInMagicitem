@@ -1,0 +1,15 @@
+public class Player {
+    private MagicItem[] magicItems;
+    // ... other fields and methods
+
+    public void useMagicItem(String itemName) {
+        for (int k = 0; k < this.magicItems.length; k++) {
+            if (this.magicItems[k] != null && this.magicItems[k].getName().equals(itemName)) {
+                this.magicItems[k].use(this);
+                this.magicItems[k] = null;
+                itemCount--;
+                break;
+            }
+        }
+    }
+}

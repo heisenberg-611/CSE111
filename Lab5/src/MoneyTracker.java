@@ -34,7 +34,6 @@ public class MoneyTracker {
         if(spent == balance){
             System.out.println("You're broke!");
         }
-
     }
 
     public void showHistory(){

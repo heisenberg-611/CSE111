@@ -1,54 +1,79 @@
 public class Reader {
-    private String name = "New user";
-    private int capacity;
-    private String[] books; // Array to hold book titles
-    private int bookCount;
 
-    // Method to create a new reader with a name and initial capacity
-    public void createReader(String x, int y) {
-        name = x;
-        capacity = y;
-        books = new String[capacity]; // Initialize the array with the specified capacity
-        bookCount = 0; // Initialize book count
+    public String name;
+    public int capacity;
+    public int dj = 1;
+    public int bCount;
+    public String[] books;
+
+    public void createReader(String name, int capacity) {
+        this.name = name;
+        this.capacity = capacity;
+        this.books = new String[capacity];
     }
 
-    // Method to add a book to the reader
-    public void addBook(String bookName) {
-        if (bookCount < capacity) {
-            books[bookCount] = bookName;
-            bookCount++;
-        } else {
-            System.out.println("No more space for new book");
-        }
-    }
-
-    // Method to increase the reader's capacity
-    public void increaseCapacity(int additionalCapacity) {
-        int newCapacity = this.capacity + additionalCapacity;
-        String[] newBooks = new String[newCapacity]; // Create a new array with increased capacity
-
-        // Copy existing books to the new array
-        for (int i = 0; i < bookCount; i++) {
-            newBooks[i] = books[i];
-        }
-
-        books = newBooks; // Update the reference to the new array
-        capacity = newCapacity; // Update the capacity
-        System.out.println(name + "'s capacity increased to " + this.capacity);
-    }
-
-    // Method to display reader information
     public void readerInfo() {
-        System.out.println("Name: " + this.name);
-        System.out.println("Capacity: " + this.capacity);
-        System.out.println("Books: ");
-
-        if (bookCount == 0) {
-            System.out.println("No books added yet");
-        } else {
-            for (int i = 0; i < bookCount; i++) {
-                System.out.println("Book " + (i + 1) + ": " + books[i]);
+        System.out.println("Name: " + name);
+        System.out.println("Capacity: " + capacity);
+        System.out.println("Books:");
+        boolean add = true;
+        for (int i = 0; i < capacity; i++) {
+            if (books[i] != null) {
+                System.out.println("Book " + dj + ": " + books[i]);
+                dj++;
+                add = false;
             }
         }
+        if (add) {
+            System.out.println("No books added yet");
+        }
+    }
+
+    public void addBook(String book) {
+        if (bCount == capacity) {
+            System.out.println("No more space for new book");
+        } else {
+            books[bCount] = book;
+            bCount++;
+        }
+    }
+
+    public void increaseCapacity(int amount) {
+        capacity = amount;
+        String[] newBooks = new String[capacity];
+        for (int i = 0; i < bCount; i++) {
+            newBooks[i] = books[i];
+        }
+        books = newBooks;
+        System.out.println(name + "'s capacity increased to " + capacity);
+    }
+
+    public static void main(String[] args) {
+        Reader r1 = new Reader();
+        Reader r2 = new Reader();
+
+        r1.createReader("Messi", 2);
+        r2.createReader("Ronaldo", 5);
+
+        System.out.println("1 ==========");
+        r1.readerInfo();
+
+        System.out.println("2 ==========");
+        r2.addBook("Java");
+        r2.addBook("Python");
+        r2.addBook("C++");
+        r2.readerInfo();
+
+        System.out.println("3 ==========");
+        r1.addBook("C#");
+        r1.addBook("Rust");
+        r1.addBook("GoLang");
+
+        System.out.println("4 ==========");
+        r1.increaseCapacity(5);
+        r1.addBook("Python");
+
+        System.out.println("5 ==========");
+        r1.readerInfo();
     }
 }
