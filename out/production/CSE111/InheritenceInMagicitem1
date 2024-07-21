@@ -1,0 +1,41 @@
+public class Potion implements MagicItem {
+    @Override
+    public void use(Player player) {
+        player.increaseEnergy(50);
+        System.out.println(player.getName() + " used a Potion");
+        System.out.println("Energy Level after using item: " + player.getEnergyLevel());
+    }
+
+    @Override
+    public String getName() {
+        return "Potion";
+    }
+}
+
+public class Elixir implements MagicItem {
+    @Override
+    public void use(Player player) {
+        player.increaseEnergy(100);
+        System.out.println(player.getName() + " used an Elixir");
+        System.out.println("Energy Level after using item: " + player.getEnergyLevel());
+    }
+
+    @Override
+    public String getName() {
+        return "Elixir";
+    }
+}
+
+public class Amulet implements MagicItem {
+    @Override
+    public void use(Player player) {
+        player.increaseEnergy(200);
+        System.out.println(player.getName() + " used an Amulet");
+        System.out.println("Energy Level after using item: " + player.getEnergyLevel());
+    }
+
+    @Override
+    public String getName() {
+        return "Amulet";
+    }
+}

@@ -1,5 +1,4 @@
 public class Reader {
-
     public String name;
     public int capacity;
     public int dj = 1;
@@ -16,15 +15,15 @@ public class Reader {
         System.out.println("Name: " + name);
         System.out.println("Capacity: " + capacity);
         System.out.println("Books:");
-        boolean add = true;
+        boolean virgo = true;
         for (int i = 0; i < capacity; i++) {
             if (books[i] != null) {
                 System.out.println("Book " + dj + ": " + books[i]);
                 dj++;
-                add = false;
+                virgo = false;
             }
         }
-        if (add) {
+        if (virgo) {
             System.out.println("No books added yet");
         }
     }

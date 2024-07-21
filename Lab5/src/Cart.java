@@ -53,7 +53,7 @@ public class Cart {
         c1.addItem("Table", 3900.5);
         c1.addItem("Chair", 1400.76);
         c1.addItem("Television", 5400.87);
-        c1.addItem("Refrigerator", 5000); // This should not be added
+        c1.addItem("Refrigerator", 5000); 
         System.out.println("====2====");
         c2.addItem("Stove", 439.90);
         System.out.println("====3====");
@@ -65,7 +65,7 @@ public class Cart {
         c2.cartDetails();
         System.out.println("====6====");
         c3.cartDetails();
-        c1.giveDiscount(10); // Applying 10% discount
+        c1.giveDiscount(10); 
         System.out.println("====7====");
         c1.cartDetails();
     }

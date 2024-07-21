@@ -1,28 +1,29 @@
 public class UberApp {
-
     public String name;
     public int age;
     public String number;
-    public String[] destination = new String[3];
-    public double[] fare = new double[3];
+    public String[] destination;
+    public double[] fare;
     public int bookCount;
-    public int remainingRides;
+    public int ridecount;
 
-    public void createProfile(String name, int age, String number){
+    public void createProfile(String name, int age, String number) {
+        destination = new String[3];
+        fare = new double[3];
         this.name = name;
         this.age = age;
         this.number = number;
         bookCount = 0;
     }
 
-    public void showProfile(){
+    public void showProfile() {
         System.out.println("Hello! This is your profile:");
         System.out.println("Full name: " + this.name);
         System.out.println("Age: " + this.age);
         System.out.println("Phone Number: " + this.number);
     }
 
-    public void bookRide(String destination, double distance){
+    public void bookRide(String destination, double distance) {
         if (bookCount == 3) {
             System.out.println(this.name + ", please update your plan to premium or wait till next month!");
         } else {
@@ -32,10 +33,11 @@ public class UberApp {
             System.out.println("Destination: " + destination);
             System.out.println("Fare: " + this.fare[bookCount] + " Taka");
             bookCount++;
+            ridecount++;
         }
     }
 
-    public void changeLocation(String destination, double distance){
+    public void changeLocation(String destination, double distance) {
         if (bookCount > 0) {
             this.destination[bookCount - 1] = destination;
             double newFare = distance * 30;
@@ -45,32 +47,45 @@ public class UberApp {
         }
     }
 
-    public void resetMonth(){
+    public void resetMonth() {
         bookCount = 0;
+        ridecount = 0;
         for (int i = 0; i < 3; i++) {
             destination[i] = null;
             fare[i] = 0;
         }
     }
 
-    public String remainingRides(){
+    public String remainingRides() {
         return "You have " + (3 - bookCount) + " ride(s) remaining.";
     }
 
-    public void ridingHistory(){
-        System.out.print(this.name + ", you have visited ");
-        boolean hasRides = false;
-        for (int i = 0; i < bookCount; i++) {
-            if (i > 0) {
-                System.out.print(", ");
+    public void ridingHistory() {
+        // boolean hasRides = false;
+        // System.out.print(this.name + ", you have visited ");
+        // for (int i = 0; i < bookCount; i++) {
+        // if (i > 0) {
+        // System.out.print(", ");
+        // }
+        // System.out.print(this.destination[i]);
+        // hasRides = true;
+        // }
+        // if (!hasRides) {
+        // System.out.print("nowhere");
+        // }
+        // System.out.println(" this month.");
+        if (ridecount == 0) {
+            System.out.println(this.name + ", you haven't visited anywhere this month.");
+        } else {
+            System.out.print(this.name + ", you have visited ");
+            for (int i = 0; i < bookCount; i++) {
+                if (i > 0) {
+                    System.out.print(", ");
+                }
+                System.out.print(this.destination[i]);
             }
-            System.out.print(this.destination[i]);
-            hasRides = true;
+            System.out.println(" this month.");
         }
-        if (!hasRides) {
-            System.out.print("nowhere this month.");
-        }
-        System.out.println(" this month.");
     }
 
     public static void main(String[] args) {

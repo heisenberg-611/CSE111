@@ -18,7 +18,7 @@ public class MoneyTracker {
     public void income(double balance){
         this.balance += balance;
         lastAdded = balance;
-        System.out.println("Balance Updated!");
+        System.out.println("Balance Updated.");
     }
 
     public void expense(double spent){
@@ -26,7 +26,7 @@ public class MoneyTracker {
             this.spent = spent;
             lastSpent = spent;
             balance -= spent;
-            System.out.println("Balance Updated!");
+            System.out.println("Balance Updated.");
         }
         else if(spent > balance){
             System.out.println("Not enough balance.");
@@ -41,33 +41,28 @@ public class MoneyTracker {
         System.out.println("Last spent:" + lastSpent);
     }
 
-    public static void main(String[] args){
-        Employee emp1 = new Employee();
-        Employee emp2 = new Employee();
-        Employee emp3 = new Employee();
-
-        emp1.newEmployee("Harry Potter");
-        emp2.newEmployee("Hermione Granger");
-        emp3.newEmployee("Ron Weasley");
+    public static void main(String[] args) {
+        MoneyTracker tr1 = new MoneyTracker();
+        System.out.println(tr1.info());
+        tr1.createTracker("John");
         System.out.println("1 ==========");
-        emp1.displayInfo();
+        System.out.println(tr1.info());
         System.out.println("2 ==========");
-        emp2.displayInfo();
+        tr1.income(1000);
+        System.out.println(tr1.info());
         System.out.println("3 ==========");
-        emp3.displayInfo();
+        tr1.expense(800);
+        tr1.expense(100);
+        System.out.println(tr1.info());
         System.out.println("4 ==========");
-        emp1.calculateTax();
+        tr1.showHistory();
         System.out.println("5 ==========");
-        emp1.promoteEmployee("lead");
+        tr1.expense(101);
         System.out.println("6 ==========");
-        emp1.calculateTax();
+        tr1.expense(200);
         System.out.println("7 ==========");
-        emp1.displayInfo();
+        tr1.income(200);
+        tr1.showHistory();
         System.out.println("8 ==========");
-        emp3.promoteEmployee("manager");
-        System.out.println("9 ==========");
-        emp3.calculateTax();
-        System.out.println("10 ==========");
-        emp3.displayInfo();
     }
 }
