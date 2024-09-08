@@ -61,7 +61,7 @@ public class UberApp {
     }
 
     public void ridingHistory() {
-        // boolean hasRides = false;
+        // boolean hasRides = true;
         // System.out.print(this.name + ", you have visited ");
         // for (int i = 0; i < bookCount; i++) {
         // if (i > 0) {

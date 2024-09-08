@@ -1,9 +1,13 @@
 public class Reader {
     public String name;
     public int capacity;
-    public int dj = 1;
+    public int dj;
     public int bCount;
     public String[] books;
+
+    Reader(){
+        dj = 1;
+    }
 
     public void createReader(String name, int capacity) {
         this.name = name;
