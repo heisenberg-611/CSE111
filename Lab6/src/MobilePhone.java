@@ -38,17 +38,17 @@
 //
 //    public void makeCall(int number) {
 //        String A = "";
-//        for(int k : Phone){
+//        for(int k = 0; k < phoneCount; k++) {
 //            if(Phone[k] == number){
-//                String a = Name[k];
-//                A = a;
+//                A = Name[k];
 //            }
 //        }
 //        if(callView%2 == 0){
-//            System.out.println("Calling "+number+" . . .");
+//            System.out.println("Calling "+A+" . . .");
 //        } else {
-//            System.out.println("Calling "+ A +" . . .");
+//            System.out.println("Calling "+ number +" . . .");
 //        }
+//        callView++;
 //    }
 //
 //    public static void main(String[] args){
@@ -86,12 +86,12 @@ public class MobilePhone {
     public int callView;
 
     public void setContactCapacity(int capacity) {
-        Name = new String[capacity]; // Initialize Name array
-        Phone = new int[capacity]; // Initialize Phone array
+        Name = new String[capacity];
+        Phone = new int[capacity];
     }
 
     public void details() {
-        System.out.println("Total contacts: " + nameCount); // Use nameCount to track added contacts
+        System.out.println("Total contacts: " + nameCount);
         System.out.println("Contact List: ");
         for (int i = 0; i < nameCount; i++) {
             System.out.println(Name[i] + ": " + Phone[i]);
@@ -149,4 +149,3 @@ public class MobilePhone {
         m1.details();
     }
 }
-
