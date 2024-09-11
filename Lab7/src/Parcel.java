@@ -1,5 +1,4 @@
 public class Parcel {
-
     public String name;
     public double fee;
     public int weight;
