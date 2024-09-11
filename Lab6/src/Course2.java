@@ -80,5 +80,4 @@ public class Course2 {
         System.out.println("--------6--------");
         c2.printDetails();
     }
-
 }

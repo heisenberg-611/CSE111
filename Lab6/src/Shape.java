@@ -8,12 +8,12 @@ public class Shape {
 
     public void setParameters(String name, int b, int h){
         Name = name;
-        Area = (b*h)/2;
+        Area = (double) (b * h) /2;
     }
 
     public void setParameters(String name, int a, int b, int h){
         Name = name;
-        Area = ((a+b)*h/2);
+        Area = ((double) ((a + b) * h) /2);
     }
 
     public double details(){
