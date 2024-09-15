@@ -38,13 +38,8 @@ public class Shape2D {
         switch (type) {
             case "Square" -> System.out.println("The area of a square is " + (double) this.length * this.length);
             case "Rectangle" -> System.out.println("The area of a rectangle is " + (double) this.length * this.breadth);
-            case "Triangle" ->
-                    System.out.println("The area of a triangle is " + ((double) this.length * this.breadth) / 2);
-            case "Triangle3sides" -> {
-                System.out.println("The area of Triangle is: "+Math.floor((this.breadth * (Math.sqrt((this.Side3 * this.Side3) - (this.length * this.length)))/2)*100)/100);
-//                s = Math.floor(s *100)/100;
-//                System.out.println("The area of the Triangle is: "+ s);
-            }
+            case "Triangle" -> System.out.println("The area of a triangle is " + ((double) this.length * this.breadth) / 2);
+            case "Triangle3sides" -> System.out.println("The area of Triangle is: "+Math.floor((this.breadth * (Math.sqrt((this.Side3 * this.Side3) - (this.length * this.length)))/2)*100)/100);
         }
     }
 
