@@ -39,5 +39,4 @@ public class Passenger {
         System.out.println("Total Passenger: "+ Passenger.no_of_passenger);
         System.out.println("Total Fare: "+ Passenger.total_fare + " TK");
     }
-
 }

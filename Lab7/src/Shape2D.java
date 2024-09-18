@@ -66,5 +66,4 @@ public class Shape2D {
         tri2.area();
         System.out.println("---------8----------");
     }
-
 }
