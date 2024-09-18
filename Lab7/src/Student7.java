@@ -64,16 +64,17 @@ public class Student7 {
     private int studentID;
     private int cCount;
 
-    Student7(int ID){
+    Student7(int ID) {
         this.studentID = ID;
+        courses = new String[4];
     }
 
-    Student7(int ID, double cg){
+    Student7(int ID, double cg) {
         this.studentID = ID;
         this.cg = cg;
     }
 
-    public void addCourse(String cName){
+    public void addCourse(String cName) {
         if (this.cg == 0.0) {
             System.out.println("Failed to add " + cName);
             System.out.println("Set CG first");
@@ -118,15 +119,15 @@ public class Student7 {
         }
     }
 
-    public void setCG(double cg){
+    public void setCG(double cg) {
         this.cg = cg;
     }
 
-    public void setID(int ID){
+    public void setID(int ID) {
         this.studentID = ID;
     }
 
-    public void rmAllCourse(){
+    public void rmAllCourse() {
         this.courses = new String[4];
         this.cCount = 0;  // Reset the course count
     }
@@ -139,7 +140,7 @@ public class Student7 {
             System.out.println("Student ID: " + studentID + ", " + "CGPA: " + cg);
             System.out.println("Added courses are:");
             for (int i = 0; i < cCount; i++) {
-                System.out.print(courses[i]+" ");
+                System.out.print(courses[i] + " ");
             }
             System.out.println();
         }

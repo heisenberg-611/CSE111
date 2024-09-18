@@ -12,5 +12,4 @@ public class ProductTester {
         System.out.println("Retrieved Price: $" + product2.getPrice());
         System.out.println("Retrieved Quantity: " + product2.getQuantity());
     }
-
 }

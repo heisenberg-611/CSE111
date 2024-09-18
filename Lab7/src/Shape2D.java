@@ -31,7 +31,7 @@ public class Shape2D {
         this.length = n;
         this.breadth = i;
         this.type = triangle;
-        System.out.println("A Triangle has been created with length: " + this.length + " and base :" + this.breadth);
+        System.out.println("A Triangle has been created with length: " + this.length + " and base : " + this.breadth);
     }
 
     public void area() {
@@ -39,7 +39,12 @@ public class Shape2D {
             case "Square" -> System.out.println("The area of a square is " + (double) this.length * this.length);
             case "Rectangle" -> System.out.println("The area of a rectangle is " + (double) this.length * this.breadth);
             case "Triangle" -> System.out.println("The area of a triangle is " + ((double) this.length * this.breadth) / 2);
-            case "Triangle3sides" -> System.out.println("The area of Triangle is: "+Math.floor((this.breadth * (Math.sqrt((this.Side3 * this.Side3) - (this.length * this.length)))/2)*100)/100);
+            case "Triangle3sides" -> {
+                double s = (double) (length + breadth + Side3) / 2;
+                double area = Math.sqrt(s * (s - length) * (s - breadth) * (s - Side3));
+//              System.out.println("The area of Triangle is: "+Math.floor((this.breadth * (Math.sqrt((this.Side3 * this.Side3) - (this.length * this.length)))/2)*100)/100);
+                System.out.println("The area of Triangle is: "+Math.floor(area*100)/100);
+            }
         }
     }
 
