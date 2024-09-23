@@ -55,7 +55,7 @@ public class Student{
         System.out.println("ID: "+id);
         System.out.println("Courses: "+courses);
     }
-    public static void main (String args[]){
+    public static void main (String[] args){
         CSEStudent.details();
         System.out.println("1--------------");
         CSEStudent s1 =  new CSEStudent("Bob", 23);
@@ -78,5 +78,4 @@ public class Student{
         s2.addLabBasedCourse("CSE110");
         s2.info();
     }
-
 }
