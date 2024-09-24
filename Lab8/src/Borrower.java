@@ -64,7 +64,7 @@ public class Borrower {
             case "Pather Panchali" -> book_count[0];
             case "Durgesh Nandini" -> book_count[1];
             case "Anandmath" -> book_count[2];
-            default -> -1; // Invalid book title
+            default -> -1;
         };
     }
 

@@ -13,4 +13,3 @@ public class Dog extends Animal{
         return this.name;
     }
 }
-
