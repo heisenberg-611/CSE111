@@ -1,51 +1,68 @@
 public class Smartphone {
     public String name;
-    public String size;
-    public String color;
-    public String ram;
-    public String ramtype;
-    public Smartphone(){
-        name = "";
+    public String[] featureNames;
+    public String[] featureValues;
+    public int featureCount;
+
+    // Maximum number of features the phone can have
+    public final int MAX_FEATURES = 10;
+
+    // Default constructor
+    public Smartphone() {
+        this.name = null;
+        this.featureNames = new String[MAX_FEATURES];
+        this.featureValues = new String[MAX_FEATURES];
+        this.featureCount = 0;
     }
-    public Smartphone(String name){
+
+    // Constructor with phone name
+    public Smartphone(String name) {
+        this.name = name;
+        this.featureNames = new String[MAX_FEATURES];
+        this.featureValues = new String[MAX_FEATURES];
+        this.featureCount = 0;
+    }
+
+    // Method to update phone name
+    public void updateName(String name) {
         this.name = name;
     }
-    public void addFeature(String s, String size){
-        if (name.isEmpty()) {
+
+    // Method to add feature
+    public void addFeature(String key, String value) {
+        if (this.name == null) {
             System.out.println("Feature can not be added without phone name");
+            return;
         }
-        else if(s.equals("Display")) {
-            if(size.equals("6.1 inch") || size.equals("6.2 inch")) {
-                this.size = size;
-            } else {
-                this.color = size;
+
+// Check if feature already exists
+        for (int i = 0; i < featureCount; i++) {
+            if (featureNames[i].equals(key)) {
+// Update the existing feature by appending the value
+                featureValues[i] += ", " + value;
+                return;
             }
-        } else if (s.equals("Ram")) {
-            if(size.equals("6 GB")) {
-                this.ram = size;
-            } else {
-                this.ramtype = size;
-            }
+        }
+
+// Add new feature if not already present
+        if (featureCount < MAX_FEATURES) {
+            featureNames[featureCount] = key;
+            featureValues[featureCount] = value;
+            featureCount++;
+        } else {
+            System.out.println("Cannot add more features, maximum capacity reached.");
         }
     }
 
-    public void updateName(String s){
-        this.name=s;
-    }
-
-    public void printDetail(){
-        if(color==null && ram == null && ramtype == null){
-            System.out.println("Phone name: "+name);
-            System.out.println("Display: "+size);
-        } else if(ramtype == null && color == null){
-            System.out.println("Phone name: "+name);
-            System.out.println("Display: "+size);
-            System.out.println("Ram: "+ram);
-        } else{
-            System.out.println("Phone name: "+name);
-            System.out.println("Display: "+size+", "+color);
-            System.out.println("Ram: "+ram);
-            System.out.println("Ram type: "+ramtype);
+    // Method to print phone details
+    public void printDetail() {
+        if (this.name != null) {
+            System.out.println("Phone Name: " + this.name);
+            for (int i = 0; i < featureCount; i++) {
+                System.out.println(featureNames[i] + ": " + featureValues[i]);
+            }
+        } else {
+            System.out.println("Phone Name: Not set");
         }
     }
     public static void main(String[] args) {
@@ -68,4 +85,5 @@ public class Smartphone {
         s2.printDetail();
         System.out.println("6===================");
     }
+
 }
