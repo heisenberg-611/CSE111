@@ -19,11 +19,11 @@ public class Dog {
     }
 
     public String bark() {
-        if (name != null && !name.isEmpty() && color != null && !color.isEmpty()) {
+        if (name != null && color != null) {
             return name + " the " + color + " dog is barking";
-        } else if (name != null && !name.isEmpty()) {
+        } else if (name != null) {
             return name + " is barking";
-        } else if (color != null && !color.isEmpty()) {
+        } else if (color != null) {
             return color + " dog is barking";
         } else {
             return "A dog is barking";

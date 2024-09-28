@@ -1,5 +1,49 @@
 public class Employee {
+    public String name;
+    public String designation;
+    public double salary;
 
+    public void newEmployee(String name){
+        this.name = name;
+        this.designation = "junior";
+        this.salary = 30000.0;
+    }
+
+    public void displayInfo(){
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee Salary: " + salary);
+        System.out.println("Employee Designation: " + designation);
+    }
+
+    public void calculateTax() {
+        double tax;
+        if (this.salary > 50000) {
+            tax = this.salary * 0.3;
+            System.out.printf("%s Tax Amount: %.2f Tk\n", this.name, tax);
+        } else if (this.salary > 30000) {
+            tax = this.salary * 0.1;
+            System.out.printf("%s Tax Amount: %.2f Tk\n", this.name, tax);
+        } else {
+            System.out.println("No need to pay tax");
+        }
+    }
+
+    public void promoteEmployee(String x) {
+        this.designation = x;
+        switch (this.designation) {
+            case "senior":
+                this.salary += 25000;
+                break;
+            case "lead":
+                this.salary += 50000;
+                System.out.printf("%s has been promoted to lead\nNew Salary: %.2f Tk\n", this.name, this.salary);
+                break;
+            case "manager":
+                this.salary += 75000;
+                System.out.printf("%s has been promoted to manager\nNew Salary: %.2f Tk\n", this.name, this.salary);
+                break;
+        }
+    }
     public static void main(String[] args) {
         Employee emp1 = new Employee();
         Employee emp2 = new Employee();

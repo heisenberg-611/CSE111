@@ -61,19 +61,21 @@ public class UberApp {
     }
 
     public void ridingHistory() {
-        // boolean hasRides = true;
-        // System.out.print(this.name + ", you have visited ");
-        // for (int i = 0; i < bookCount; i++) {
-        // if (i > 0) {
-        // System.out.print(", ");
-        // }
-        // System.out.print(this.destination[i]);
-        // hasRides = true;
-        // }
-        // if (!hasRides) {
-        // System.out.print("nowhere");
-        // }
-        // System.out.println(" this month.");
+        /*
+         boolean hasRides = true;
+         System.out.print(this.name + ", you have visited ");
+         for (int i = 0; i < bookCount; i++) {
+         if (i > 0) {
+         System.out.print(", ");
+         }
+         System.out.print(this.destination[i]);
+         hasRides = true;
+         }
+         if (!hasRides) {
+         System.out.print("nowhere");
+         }
+         System.out.println(" this month.");
+        */
         if (ridecount == 0) {
             System.out.println(this.name + ", you haven't visited anywhere this month.");
         } else {
