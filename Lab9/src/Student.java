@@ -2,6 +2,9 @@ public class Student {
     private String name = "Just a Student";
     private String department = "nothing";
 
+    public Student(){
+        System.out.println("AB");
+    }
     public void updateDepartment(String dpt){
         this.department = dpt;
     }

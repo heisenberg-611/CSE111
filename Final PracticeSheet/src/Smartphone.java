@@ -4,6 +4,7 @@ public class Smartphone {
     public String[] feature;
     public final int maxFeature = 10;
     public int featureCount;
+
     public Smartphone(){
         this.name = null;
         this.feature_type = new String[maxFeature];
